@@ -46,17 +46,18 @@ const MatrixTextEffect = () => {
 
   return (
     <div
-      style={{
-        fontFamily: " ",
-        fontWeight: "300",
-        fontSize: "2rem",
-        color: "black",
+      className="text-[2rem] font-light"
+      //   style={{
+      //     fontFamily: " ",
+      //     fontWeight: "300",
+      //     fontSize: "2rem",
+      //     color: "black",
 
-        whiteSpace: "nowrap",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      //     whiteSpace: "nowrap",
+      //     display: "flex",
+      //     alignItems: "center",
+      //     justifyContent: "center",
+      //   }}
     >
       {displayText}
     </div>

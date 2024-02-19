@@ -37,7 +37,10 @@ export default function index({ project }) {
         animate={isActive ? "open" : "closed"}
         className={styles.imgContainer}
       >
-        <img src={`${src}`}></img>
+        <video autoPlay muted loop playsInline className="w-[110px]">
+          <source src={src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </motion.div>
       <p>{title2}</p>
     </div>

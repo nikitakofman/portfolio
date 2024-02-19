@@ -105,11 +105,9 @@ function Main() {
         style={{ scaleX: scrollYProgress }}
       /> */}
       <Loading onFinish={handleLoadingFinish} />
-      {isNotMobile ? (
-        <Welcome LoadingDone={isLoadingFinished} />
-      ) : (
-        <WelcomeMobile LoadingDone={isLoadingFinished} />
-      )}
+
+      <Welcome LoadingDone={isLoadingFinished} />
+
       <div className="h-full">
         <div id="work" />
         <div className="hidden md:flex md:flex-col">

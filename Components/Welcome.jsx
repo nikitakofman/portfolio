@@ -59,8 +59,9 @@ function Welcome({ LoadingDone }) {
             transform: "translate(-50%, -50%)",
             opacity: fadeEffect ? 1 : 0,
             transition: "opacity 0.5s ease-in-out",
+            fontFamily: "Jost",
           }}
-          className="hidden md:flex modal-like-div"
+          className="hidden md:flex"
         >
           <TurningFx />
         </div>
@@ -89,12 +90,23 @@ function Welcome({ LoadingDone }) {
                     {t("france")}
                   </h1>
 
-                  <Image
+                  {/* <Image
                     height="50"
                     width="50"
-                    src="/globe.gif"
+                    priority
+                    src="/globe.mp4"
                     className=" size-20 bg-[#D4CACA] p-2 rounded-full"
-                  />
+                  /> */}
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="size-20 bg-[#D4CACA] p-2 rounded-full"
+                  >
+                    <source src="/globe.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -163,7 +175,9 @@ function Welcome({ LoadingDone }) {
           <Image
             height={500}
             width={500}
-            src="/cartoonnk.png"
+            priority
+            alt="NK Cartoon"
+            src="/cartoonnk.webp"
             className={`absolute -ml-[100px] z-[9999] ${
               LoadingDone ? "cartoonup" : "translate-y-full"
             }`}

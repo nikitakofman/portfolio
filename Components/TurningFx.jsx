@@ -35,6 +35,7 @@ function TurningFx() {
                 alignment-baseline="top"
                 xlinkHref="#circle"
                 className="text"
+                style={{ fontFamily: "Jost" }}
               >
                 {t("webdev")}
               </textPath>

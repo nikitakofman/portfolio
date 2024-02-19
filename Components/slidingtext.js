@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./style2.module.scss";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { slideUp } from "./animation";
@@ -18,13 +18,22 @@ export default function SlidingText() {
 
   const { t } = useTranslation();
 
-  useLayoutEffect(() => {
-    console.log("Slider Element:", slider.current);
-    console.log("First Text Element:", firstText.current);
-    console.log("Second Text Element:", secondText.current);
-    console.log("Third Text Element:", thirdText.current);
-
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const animate = () => {
+      if (xPercent < -100) {
+        xPercent = 0;
+      } else if (xPercent > 0) {
+        xPercent = -100;
+      }
+      gsap.set(firstText.current, { xPercent: xPercent });
+      gsap.set(secondText.current, { xPercent: xPercent });
+      gsap.set(thirdText.current, { xPercent: xPercent });
+      requestAnimationFrame(animate);
+      xPercent += 0.03 * direction;
+    };
+
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
@@ -35,21 +44,21 @@ export default function SlidingText() {
       },
       x: "-500px",
     });
-    requestAnimationFrame(animate);
-  }, []);
 
-  const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
-    }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
-    gsap.set(thirdText.current, { xPercent: xPercent });
     requestAnimationFrame(animate);
-    xPercent += 0.03 * direction;
-  };
+
+    // Cleanup GSAP animations on component unmount
+    return () => {
+      gsap.to(slider.current, { x: 0 }); // Reset the position
+      gsap.killTweensOf([
+        firstText.current,
+        secondText.current,
+        thirdText.current,
+      ]);
+      gsap.killTweensOf(slider.current);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
     <motion.main variants={slideUp} className={styles.landing}>
@@ -57,7 +66,7 @@ export default function SlidingText() {
         <div className={styles.sliderContainer}>
           <div
             ref={slider}
-            className={`${styles.slider} text-[65px]  sm:text-[100px]`}
+            className={`${styles.slider} text-[65px] sm:text-[100px]`}
           >
             <p ref={firstText}>
               {t("hello")}&nbsp;👨‍💻&nbsp;{t("make")}

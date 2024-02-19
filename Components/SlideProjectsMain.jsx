@@ -8,19 +8,19 @@ export default function Projects() {
     {
       title1: "Villa",
       title2: "Palmire",
-      src: "/VPFILM.gif",
+      src: "/VPFILM.mp4",
       link: "https://www.villadepalmire.com",
     },
     {
       title1: "Beat",
       title2: "Odyssey",
-      src: "/BOFILM.gif",
+      src: "/BOFILM.mp4",
       link: "https://www.beatodyssey.com",
     },
     {
       title1: "",
       title2: "NZX",
-      src: "/NZXFILM.gif",
+      src: "/NZXFILM.mp4",
       link: "https://www.nzxaudio.com",
     },
   ];

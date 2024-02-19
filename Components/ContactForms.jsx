@@ -47,6 +47,7 @@ function ContactForms({ onVisibilityChange }) {
               <Image
                 width={100}
                 height={100}
+                alt="NK Profil"
                 src="/photoprofil.webp"
                 className="rounded-full object-cover  mix-blend-multiply"
               />

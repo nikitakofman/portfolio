@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import localFont from "next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,17 +23,6 @@ export const metadata = {
     siteName: "Villa Palmire - Luxurious Stay in La Turbie",
   },
 };
-
-// Font files can be colocated inside of `app`
-const futura = localFont({
-  src: "../../fonts/Futura.ttf",
-  display: "swap",
-});
-
-const futurabold = localFont({
-  src: "../../fonts/FuturaBold.ttf",
-  display: "swap",
-});
 
 export default function RootLayout({ children }) {
   return (
