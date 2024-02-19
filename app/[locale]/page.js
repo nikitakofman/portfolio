@@ -19,7 +19,6 @@ export default async function Home({ params: { locale } }) {
       >
         <main className="h-full border-box">
           {/* <LanguageChanger /> */}
-
           <Main />
           <Footer />
         </main>
