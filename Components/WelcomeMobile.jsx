@@ -9,11 +9,10 @@ import TurningFx from "./TurningFx";
 import { useInView } from "react-intersection-observer";
 import styles from "./text2.module.css";
 import { AnimatePresence, motion } from "framer-motion";
-import GsapMagnetic from "./gsap";
+
 import Scroll from "./Scroll";
 import SlidingText from "./slidingtext";
 import Slider from "./Slider";
-import useStore from "@/store";
 
 function WelcomeMobile({ LoadingDone }) {
   const { t } = useTranslation();
