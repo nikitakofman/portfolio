@@ -1,0 +1,17 @@
+.custom-cursor {
+  position: fixed;
+
+  pointer-events: none; /* Allows the cursor to "float" over other elements */
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  z-index: 9999; /* Ensure the cursor is on top of other elements */
+}
+
+/* Add hover effect, if desired */
+.custom-cursor:hover {
+  transform: scale(1.5);
+}
+
+.inverted path {
+  fill: white;
+}

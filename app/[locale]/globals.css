@@ -1,0 +1,665 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Capriola&family=Jockey+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Londrina+Shadow&family=Londrina+Solid:wght@100;300;400;900&family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family= :wght@300..700&family=Gothic+A1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "FuturaBold";
+  src: url("../../fonts/FuturaBold.ttf") format("truetype");
+}
+
+/* BACKGROUNDS */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #d4caca;
+  overflow-x: hidden;
+}
+
+.krub {
+  font-family: "Krub";
+}
+
+/* #f7edc5; */
+
+.lenis-scrolling {
+  scroll-behavior: initial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes bounceOffScreen {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    /* transform: translateY(-100vw); */
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.bounce-off {
+  animation: bounceOffScreen 1s forwards;
+  will-change: transform, opacity;
+}
+
+.skills-scroll {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      -1020px
+    ); /* Adjust this based on the actual width of one set */
+  }
+}
+
+.contain {
+  contain: paint;
+}
+
+#scroll-text {
+  transition: opacity 0.5s ease;
+}
+
+@function textShadow($precision, $size, $color) {
+  $value: null;
+  $offset: 0;
+  $length: $size * (1 / $precision) - 1;
+
+  @for $i from 0 through $length {
+    $offset: $offset + $precision;
+    $shadow: $offset + px $offset + px $color;
+    $value: append($value, $shadow, comma);
+  }
+
+  @return $value;
+}
+
+.playful span {
+  position: relative;
+  color: black;
+  text-shadow: textShadow(0.25, 6, white);
+  animation: scatter 1.75s infinite;
+}
+
+.playful span:nth-child(2n) {
+  color: black;
+  text-shadow: textShadow(0.25, 6, white);
+  animation-delay: 0.3s;
+}
+
+.playful span:nth-child(3n) {
+  color: black;
+  text-shadow: textShadow(0.25, 6, white);
+  animation-delay: 0.15s;
+}
+
+.playful span:nth-child(5n) {
+  color: black;
+  text-shadow: textShadow(0.25, 6, white);
+  animation-delay: 0.4s;
+}
+
+.playful span:nth-child(7n),
+.playful span:nth-child(11n) {
+  color: black;
+  text-shadow: textShadow(0.25, 6, white);
+  animation-delay: 0.25s;
+}
+
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -5px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.text {
+  font-weight: 600;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-family: "Kanit";
+  font-size: 17px;
+  fill: #111;
+  text-shadow: 2px 0px #ccc;
+  background-color: white;
+}
+
+#rotatingText {
+  animation-name: rotate-circle;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.main img {
+  position: absolute;
+}
+
+.main img {
+  position: absolute;
+  animation-name: rotate-circle;
+  animation-direction: reverse;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  filter: drop-shadow(0px 0px 5px #333);
+}
+
+@keyframes slideInFromLeftFadeIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeftFadeOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromRightFadeIn {
+  0% {
+    transform: translateX(100%); /* Slide in from right */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRightFadeOut {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%); /* Slide out to right */
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: 0.8s ease-out 0s 1 slideInFromLeftFadeIn;
+}
+
+.slide-out {
+  animation: 0.8s ease-out 0s 1 slideOutToLeftFadeOut;
+}
+
+.slide-in2 {
+  animation: 0.4s ease-out 0s 1 slideInFromRightFadeIn;
+}
+
+.slide-out2 {
+  animation: 0.4s ease-out 0s 1 slideOutToRightFadeOut;
+}
+
+.slide-out-left {
+  transition: transform 1s ease;
+}
+
+.slide-out-right {
+  transition: transform 1s ease;
+}
+
+.scrolled-left {
+  transform: translateX(-100vw); /* Move to the left */
+}
+
+.scrolled-right {
+  transform: translateX(100vw); /* Move to the right */
+}
+
+.rotate90 {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.flip {
+  transform: rotate(180deg);
+}
+
+.fade-in-image {
+  width: 100%;
+  height: auto;
+  transition: opacity 1s ease-out;
+  opacity: 1; /* Start with a transparent image */
+}
+
+.fade-in-image.loaded {
+  opacity: 1; /* Fade in to full opacity */
+}
+
+.fullscreen-background {
+  transition: background-image 0.5s ease-in-out; /* Adjust timing and easing as needed */
+}
+
+.slider {
+  animation: slideInFromLeft 2s forwards;
+}
+
+.slider-out {
+  animation: slideOutToLeft 2s forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* .modal-like-div {
+  box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px,
+    rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px,
+    rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px,
+    rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px,
+    rgb(255, 85, 85) 40px -40px;
+} */
+
+/* .modal-like-div {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+} */
+
+.fadeIn {
+  opacity: 1;
+}
+
+.article-card {
+  width: 350px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 300ms;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.article-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card .content {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  /* padding: 30px 20px 20px 20px; */
+  height: auto;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+.article-card .date,
+.article-card .title {
+  margin: 0;
+}
+
+.article-card .date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4px;
+}
+
+.article-card .title {
+  font-size: 17px;
+  color: #fff;
+}
+
+.invert-colors .fa-icon {
+  filter: invert(100%);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: conic-gradient(from -90deg, #d4caca 90deg, #e3d6d600 0);
+  background: var(--c), var(--c);
+  background-size: 40% 40%;
+  animation: l20 1.5s infinite;
+}
+@keyframes l20 {
+  0%,
+  20% {
+    background-position: 0 0, 0 calc(100% / 3);
+  }
+  33% {
+    background-position: 0 0, calc(100% / 3) calc(100% / 3);
+  }
+  66% {
+    background-position: 0 calc(100% / 3), calc(100% / 3) 0;
+  }
+  80%,
+  100% {
+    background-position: 0 calc(100% / 3), 0 0;
+  }
+}
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  width: 80px;
+  height: 70px;
+  border: 5px solid #d4caca;
+  padding: 0 8px;
+  background-color: #d4caca;
+  box-sizing: border-box;
+  background: linear-gradient(#fff 0 0) 0 0/8px 20px,
+    linear-gradient(#fff 0 0) 100% 0/8px 20px,
+    radial-gradient(farthest-side, #fff 90%, #d4caca) 0 5px/8px 8px content-box,
+    #000;
+  background-repeat: no-repeat;
+  animation: l3 2s infinite linear;
+}
+@keyframes l3 {
+  25% {
+    background-position: 0 0, 100% 100%, 100% calc(100% - 5px);
+  }
+  50% {
+    background-position: 0 100%, 100% 100%, 0 calc(100% - 5px);
+  }
+  75% {
+    background-position: 0 100%, 100% 0, 100% 5px;
+  }
+} */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8px;
+  background-color: #000; /* Visible color */
+  width: 100%; /* Full width */
+  transform-origin: left center; /* Ensure it scales from the left */
+}
+
+/* ::-webkit-scrollbar {
+  width: 0px;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+* {
+  -ms-overflow-style: none;
+} */
+
+.cssbg1 {
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+}
+
+.duration2k {
+  transition-duration: 1500ms;
+}
+
+.duration2k {
+  animation-duration: 1500ms;
+}
+
+button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #1c1d20;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 15px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.project .imgContainer {
+  overflow: hidden;
+
+  display: flex;
+
+  justify-content: center;
+
+  width: 0;
+}
+
+.underline-animation p {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff; /* or any color you want */
+  transform-origin: bottom;
+  transition: transform 0.4s ease-in-out;
+}
+
+.underline-animation p:hover::after {
+  transform: scaleX(1);
+}
+
+.underline-animation-2 p {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animation-2 p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  margin-bottom: 6px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000; /* or any color you want */
+  transform-origin: bottom;
+  transition: transform 0.4s ease-in-out;
+}
+
+.underline-animation-2 p:hover::after {
+  transform: scaleX(1);
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Adjust the height as needed */
+}
+
+.bar {
+  width: 0; /* Start with width 0 */
+  height: 200px; /* Adjust the initial height of each bar */
+  background-color: #d4caca;
+  margin-right: 40px; /* Adjust the margin between bars */
+  animation: growWidth 2s ease forwards, moveUp 1.5s ease 1 forwards;
+  will-change: width, transform;
+}
+
+.bar1 {
+  animation-delay: 0.1s;
+}
+
+.bar2 {
+  animation-delay: 0.2s; /* Adjust the delay for the last two bars */
+}
+
+.bar3 {
+  animation-delay: 0.3s; /* Adjust the delay for the last two bars */
+}
+
+.delayed-animation {
+  animation-play-state: paused;
+}
+
+.loader-container .delayed-animation {
+  animation-play-state: running;
+}
+
+@keyframes growWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 120px;
+    /* Adjust the final width of each bar */
+  }
+}
+
+@keyframes moveUp {
+  0%,
+  20% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px); /* Adjust the distance each bar travels */
+  }
+  100% {
+    transform: translateY(0);
+    margin-right: -1px;
+  }
+}
+
+.custom-cursor {
+  cursor: url("/VPFILM.gif"), auto;
+}
+
+.getout {
+  transform: translateX(-50px);
+  transition: transform 0.7s ease; /* Adjust the duration and easing function as needed */
+}
+
+.getoutright {
+  transform: translateX(-100px);
+  transition: transform 0.7s ease; /* Adjust the duration and easing function as needed */
+}
+
+.getinright {
+  transform: translateX(-50px);
+  transition: transform 0.7s ease; /* Adjust the duration and easing function as needed */
+}
+
+.getin {
+  transform: translateX(0px);
+  transition: transform 0.7s ease;
+}
+
+.cartoonup {
+  transform: translateY(0px);
+  transition: transform 1s ease;
+}
+
+.locaon {
+  transform: translateX(0px);
+  transition: transform 1.5s ease;
+}

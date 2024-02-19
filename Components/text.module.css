@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 20vw;
+}
+
+.body {
+  font-size: 8vw;
+  display: flex;
+}
+
+.lineMask {
+  overflow: hidden;
+}
+
+.lineMask p {
+  margin: 0px;
+  /* font-family: "Open Sans"; */
+  padding: 10px;
+  margin-left: -10px;
+}
+
+.underline {
+  height: 2px;
+  background-color: red; /* Set a distinct color for testing */
+  position: absolute;
+  bottom: 0;
+}
