@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import SkillsBox from "./SkillsBox";
 
@@ -15,6 +15,7 @@ import SlidingText from "./slidingtext";
 import LanguageChanger from "./LanguageChanger";
 import Slider from "./Slider";
 import Scroll from "./Scroll";
+import Loading from "./Loading";
 
 function Welcome({ LoadingDone }) {
   const { t } = useTranslation();
@@ -40,6 +41,23 @@ function Welcome({ LoadingDone }) {
       setIsModalVisible(false);
     }, 500);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollText = document.getElementById("scroll-text");
+      if (window.scrollY > 0) {
+        scrollText.style.opacity = 0;
+      } else {
+        scrollText.style.opacity = 1;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -79,6 +97,28 @@ function Welcome({ LoadingDone }) {
           <div className="w-full borderborder-black h-full"></div>
           <div className="w-full borderborder-black h-full">
             {" "}
+            {LoadingDone && (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 1,
+                  rotate: 180,
+
+                  translateX: 50,
+                }}
+                animate={{
+                  opacity: 1,
+                  translateY: 0,
+                  translateX: 0,
+                  scale: 1,
+                  rotate: 180,
+                }} // Animate to normal scale
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                className="text-xl rotate90 absolute flex sm:hidden font-light right-0 flip top-[20%] mr-4"
+              >
+                NIKITA KOFMAN
+              </motion.div>
+            )}
             <div
               className={`absolute rounded-xl h-full borderborder-black flex flex-col w-full ${
                 LoadingDone ? "locaon" : "-translate-x-full"
@@ -109,16 +149,31 @@ function Welcome({ LoadingDone }) {
                     <source src="/globe.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  <div className="text-lg rotate90 absolute flex sm:hidden right-0 flip -mr-1">
-                    NIKITA KOFMAN
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="botom-0 absolute text-lg flex sm:hidden">
-            <Scroll />
-          </div>
+          {LoadingDone && (
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 1,
+
+                translateX: -50,
+              }}
+              animate={{
+                opacity: 1,
+                translateY: 0,
+                translateX: 0,
+                scale: 1,
+              }} // Animate to normal scale
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="botom-0 absolute text-lg flex sm:hidden"
+            >
+              <Scroll />
+            </motion.div>
+          )}
+
           <div className="w-full borderborder-black ml-5 flex items-left justify-center flex-col text-left  h-full">
             {" "}
             {/* <h1>hi! i'm niki</h1>
