@@ -14,6 +14,7 @@ import GsapMagnetic from "./gsap";
 import SlidingText from "./slidingtext";
 import LanguageChanger from "./LanguageChanger";
 import Slider from "./Slider";
+import Scroll from "./Scroll";
 
 function Welcome({ LoadingDone }) {
   const { t } = useTranslation();
@@ -91,7 +92,6 @@ function Welcome({ LoadingDone }) {
                     <br></br>
                     {t("france")}
                   </h1>
-
                   {/* <Image
                     height="50"
                     width="50"
@@ -109,11 +109,16 @@ function Welcome({ LoadingDone }) {
                     <source src="/globe.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                  <div className="text-lg rotate90 absolute right-0 flip -mr-1">
+                    NIKITA KOFMAN
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
+          <div className="botom-0 absolute text-lg flex sm:hidden">
+            <Scroll />
+          </div>
           <div className="w-full borderborder-black ml-5 flex items-left justify-center flex-col text-left  h-full">
             {" "}
             {/* <h1>hi! i'm niki</h1>

@@ -23,6 +23,7 @@ import {
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { Toaster } from "react-hot-toast";
 
 function Main() {
   const { t } = useTranslation();
@@ -114,6 +115,7 @@ function Main() {
 
   return (
     <>
+      <Toaster />
       <NameHeader invertColors={isBOSlideVisible} />
       <Contacts invertColors={isBOSlideVisible} />
       <LanguageChanger />

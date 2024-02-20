@@ -2,8 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useInView } from "react-intersection-observer";
 import emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 
 function ContactForm() {
   const { ref, inView } = useInView({
@@ -23,15 +22,28 @@ function ContactForm() {
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then((result) => {
-        toast.success(`bruh`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
+        toast(t("sent"), {
+          duration: 4000,
+          position: "top center",
+
+          // Styling
+          style: {},
+          className: "",
+
+          // Custom Icon
+          icon: "✅️",
+
+          // Change colors of success/error/loading icon
+          iconTheme: {
+            primary: "#000",
+            secondary: "#fff",
+          },
+
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
         });
       });
 
@@ -41,7 +53,6 @@ function ContactForm() {
   return (
     <>
       {" "}
-      <ToastContainer />
       <form
         onSubmit={handleOnSubmit}
         className="w-full  flex items-start  flex-col gap-10 justify-center h-full"
