@@ -6,21 +6,21 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Nikita Kofman - Web Developer based in France",
   description:
-    "Experience the charm of the French Riviera at Villa Palmire, an exquisite guest house nestled in the village of La Turbie. Enjoy luxurious amenities, breathtaking views, and a tranquil escape.",
+    "I'm Nikita Kofman, a Web Developer in France. Passionate about building digital solutions. Check out my portfolio and let's collaborate on your next project!",
   openGraph: {
     title: "Villa Palmire - Elegant Guest House in La Turbie, France",
     description:
-      "Discover Villa Palmire in La Turbie, France. Our guest house offers a serene retreat with stunning views, elegant rooms, and easy access to Monaco and the Riviera.",
-    url: "https://www.villadepalmire.com",
+      "I'm Nikita Kofman, a Web Developer in France. Passionate about building digital solutions. Check out my portfolio and let's collaborate on your next project!",
+    url: "https://www.nikitakofman.com",
     images: [
       {
-        url: "https://www.villadepalmire.com/vpweb.webp",
+        url: "https://www.nikitakofman.com/nkweb.webp",
         width: 800,
         height: 600,
-        alt: "Villa Palmire Home Page",
+        alt: "Nikita Kofman Home Page",
       },
     ],
-    siteName: "Villa Palmire - Luxurious Stay in La Turbie",
+    siteName: "Nikita Kofman - Web Developer based in France",
   },
 };
 
