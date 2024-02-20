@@ -109,7 +109,7 @@ function Welcome({ LoadingDone }) {
                     <source src="/globe.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  <div className="text-lg rotate90 absolute right-0 flip -mr-1">
+                  <div className="text-lg rotate90 absolute flex sm:hidden right-0 flip -mr-1">
                     NIKITA KOFMAN
                   </div>
                 </div>
