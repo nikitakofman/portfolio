@@ -12,6 +12,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import GsapMagnetic from "./gsap";
 
 import SlidingText from "./slidingtext";
+import LanguageChanger from "./LanguageChanger";
+import Slider from "./Slider";
 
 function Welcome({ LoadingDone }) {
   const { t } = useTranslation();
@@ -128,7 +130,7 @@ function Welcome({ LoadingDone }) {
                     }}
                     animate={{ opacity: 1, translateY: 0, scale: 1 }} // Animate to normal scale
                     transition={{ duration: 1, ease: "easeInOut" }}
-                    className={`myFont ml-[30px]`}
+                    className={`myFont ml-[30px] absolute mb-96 sm:mb-0`}
                     // style={{ fontFamily: " ", fontWeight: "300" }}
                   >
                     {" "}
@@ -142,9 +144,10 @@ function Welcome({ LoadingDone }) {
             )}
           </div>
         </div>
+
         <div className="borderborder-black flex flex-col justify-end items-center  h-full w-7/12">
           {" "}
-          <div className="h-full w-full flex gap-5 justify-end mr-10  mt-3 text-[25px] z-50 right-0">
+          <div className="h-full w-full hidden sm:flex gap-5 justify-end mr-10  mt-[14px] text-[25px] z-50 right-0">
             {LoadingDone && (
               <motion.div
                 initial={{
@@ -160,13 +163,13 @@ function Welcome({ LoadingDone }) {
               >
                 <a href="#work" className="mr-5 underline-animation-2">
                   <GsapMagnetic>
-                    <p>{t("region")}</p>
+                    <p>{t("work")}</p>
                   </GsapMagnetic>
                 </a>
                 <p className="mr-4">|</p>
                 <a href="#contact" className="underline-animation-2">
                   <GsapMagnetic>
-                    <p>{t("rooms")}</p>
+                    <p>{t("contact")}</p>
                   </GsapMagnetic>
                 </a>
               </motion.div>
@@ -178,7 +181,7 @@ function Welcome({ LoadingDone }) {
             priority
             alt="NK Cartoon"
             src="/cartoonnk.webp"
-            className={`absolute -ml-[100px] z-[9999] ${
+            className={`absolute min-w-[220px] w-[50%] max-w-[450px] -ml-[100px] z-[9999] ${
               LoadingDone ? "cartoonup" : "translate-y-full"
             }`}
           />

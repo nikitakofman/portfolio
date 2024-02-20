@@ -42,7 +42,11 @@ function Slider() {
   };
 
   return (
-    <Sheet open={isSheetOpen} onOpenChange={setSheetOpen} className="">
+    <Sheet
+      open={isSheetOpen}
+      onOpenChange={setSheetOpen}
+      className="cursor-pointer"
+    >
       <SheetTrigger asChild>
         <div className="flex">
           <FontAwesomeIcon

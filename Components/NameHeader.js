@@ -7,7 +7,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function NameHeader({ invertColors, style }) {
   return (
-    <div className="hidden md:flex z-20  right-0 justify-between items-center fixed">
+    <div className="hidden sm:flex z-20  right-0 justify-between items-center fixed">
       <div className="right-0 flip h-screen items-center justify-center  w-10 flex flex-col gap-5">
         <div className="h-[40px] w-full flex justify-end -mr-28 items-end">
           <h1

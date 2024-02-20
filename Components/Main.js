@@ -16,6 +16,13 @@ import WelcomeMobile from "./WelcomeMobile";
 import ProjectsMobile from "./ProjectsMobile";
 
 import LanguageChanger from "./LanguageChanger";
+import Slider from "./Slider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Main() {
   const { t } = useTranslation();
@@ -77,7 +84,6 @@ function Main() {
   }, [hasPlayed]);
 
   const handleLoadingFinish = () => {
-    console.log("Loading finished!");
     setIsLoadingFinished(true);
   };
 
@@ -94,11 +100,42 @@ function Main() {
     return () => window.removeEventListener("resize", checkIsNotMobile);
   }, []);
 
+  const openInsta = () => {
+    window.open("https://www.instagram.com/nikikofman/", "_blank");
+  };
+
+  const openLinkedin = () => {
+    window.open("https://www.linkedin.com/in/nikitakofman", "_blank");
+  };
+
+  const openGithub = () => {
+    window.open("https://github.com/nikitakofman", "_blank");
+  };
+
   return (
     <>
       <NameHeader invertColors={isBOSlideVisible} />
       <Contacts invertColors={isBOSlideVisible} />
       <LanguageChanger />
+      <div className="right-0 mt-[22px] z-50  gap-4 mr-5 flex sm:hidden fixed">
+        <FontAwesomeIcon
+          className={`h-[26px] mt-[1px] cursor-pointer pr-1 `}
+          onClick={openInsta}
+          icon={faInstagram}
+        />
+
+        <FontAwesomeIcon
+          className={`h-[26px] mt-[1px] cursor-pointer pr-1 `}
+          onClick={openGithub}
+          icon={faGithub}
+        />
+
+        <FontAwesomeIcon
+          className={`h-[26px] mt-[1px] cursor-pointer pr-1 `}
+          onClick={openLinkedin}
+          icon={faLinkedin}
+        />
+      </div>
 
       {/* <motion.div
         className="progress-bar z-20 hidden sm:flex"

@@ -23,7 +23,7 @@ export default function Contacts({ invertColors }) {
 
   return (
     <div
-      className={`z-20 pl-5 w-[30px] justify-between hidden md:flex items-center fixed ${
+      className={`z-20 pl-5 w-[30px] justify-between hidden sm:flex items-center fixed ${
         invertColors ? "getout" : "getin"
       }`}
     >

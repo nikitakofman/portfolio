@@ -18,8 +18,6 @@ function ContactForms({ onVisibilityChange }) {
     onVisibilityChange(inView);
   }, [inView, onVisibilityChange]);
 
-  console.log(inView);
-
   const { t } = useTranslation();
 
   return (
@@ -42,7 +40,6 @@ function ContactForms({ onVisibilityChange }) {
                 : "opacity-0 translate-y-[5rem]"
             }`}
           >
-            {" "}
             <div className="sm:w-6/12 md:w-full  flex justify-start">
               <Image
                 width={100}
