@@ -551,7 +551,7 @@ button:hover span:after {
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  margin-bottom: 6px;
+  margin-bottom: 1px;
   height: 1px;
   bottom: 0;
   left: 0;

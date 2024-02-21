@@ -220,7 +220,7 @@ function Welcome({ LoadingDone }) {
                 animate={{ opacity: 1, translateY: 0, scale: 1 }} // Animate to normal scale
                 transition={{ duration: 1, ease: "easeInOut" }}
                 style={{ fontFamily: " ", fontWeight: "300" }}
-                className="flex"
+                className="flex border h-2"
               >
                 <a href="#work" className="mr-5 underline-animation-2">
                   <GsapMagnetic>
