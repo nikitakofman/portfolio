@@ -114,7 +114,7 @@ function Welcome({ LoadingDone }) {
                   rotate: 180,
                 }} // Animate to normal scale
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="text-xl rotate90 absolute flex sm:hidden font-light right-0 flip top-[20%] mr-4"
+                className="text-[18px] rotate90 absolute flex sm:hidden font-light right-[10px] flip top-[70px] mr-4"
               >
                 NIKITA KOFMAN
               </motion.div>
