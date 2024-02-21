@@ -112,9 +112,10 @@ function Welcome({ LoadingDone }) {
                   translateX: 0,
                   scale: 1,
                   rotate: 180,
-                }} // Animate to normal scale
+                }}
+                // Animate to normal scale
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="text-[18px] rotate90 absolute flex sm:hidden font-light right-[10px] flip top-[70px] mr-4"
+                className="text-[18px] rotate90 absolute flex sm:hidden font-light right-[10px] flip top-[98px] mr-4"
               >
                 NIKITA KOFMAN
               </motion.div>
@@ -125,7 +126,7 @@ function Welcome({ LoadingDone }) {
               }`}
             >
               {" "}
-              <div className="h-full relative -ml-[22px] flex-col -mt-20 flex justify-start border-black w-full">
+              <div className="h-full relative -ml-[22px] flex-col -mt-28 sm:-mt-20 flex justify-start border-black w-full">
                 <div className="w-[195px] bg-[#1C1D20] ml-5 flex items-center justify-evenly rounded-r-full h-[100px]">
                   <h1 className="ml-2  font-semibold text-lg  text-white p-2 text-left rounded-2xl">
                     {t("based")}

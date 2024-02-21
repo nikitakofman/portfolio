@@ -19,7 +19,7 @@ function ProjectsMobile() {
     <>
       {" "}
       <div
-        className="flex md:hidden h-full flex-col p-6 "
+        className="flex md:hidden mt-2 h-full flex-col p-6 "
         style={{ fontFamily: " ", fontWeight: "300" }}
       >
         <p>{t("mainworks")}</p>
@@ -41,7 +41,7 @@ function ProjectsMobile() {
           {/* <img src="/BOFILM.gif"/> */}
         </div>
         <div
-          className="border-t-2 w-full my-1 flex  items-center justify-center border-black h-24"
+          className="border-t-2 w-full my-1 border-b-2 flex  items-center justify-center border-black h-24"
           onClick={openNzx}
         >
           <h1 className="text-[min(4rem,13vw)]">NZX</h1>

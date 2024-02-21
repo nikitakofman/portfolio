@@ -27,7 +27,7 @@ function ContactForms({ onVisibilityChange }) {
         {" "}
         <MaskText />
       </div>
-      <div className="flex h-full borderborder-black text-[16px] md:text-[18px] flex-col md:flex-row w-full">
+      <div className="flex h-full borderborder-black text-[16px] mb-3 sm:mb-0 md:text-[18px] flex-col md:flex-row w-full">
         <ContactForm />
         <div
           className="w-full md:w-6/12 mb-2 sm:mb-0 md:mt-0 mt-10 flex borderborder-black items-center justify-center flex-col  "
