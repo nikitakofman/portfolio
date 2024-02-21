@@ -24,7 +24,7 @@ function ProjectsMobile() {
       >
         <p>{t("mainworks")}</p>
         <div
-          className="border-t-2 w-full my-1 flex  items-center justify-center border-black h-24"
+          className="border-t-2 cursor-pointer w-full my-1 flex  items-center justify-center border-black h-24"
           onClick={openVP}
         >
           <h1 className="text-[min(4rem,13vw)] whitespace-nowrap">
@@ -32,7 +32,7 @@ function ProjectsMobile() {
           </h1>
         </div>
         <div
-          className="border-t-2 w-full my-1 flex  items-center justify-center border-black h-24"
+          className="border-t-2 cursor-pointer w-full my-1 flex  items-center justify-center border-black h-24"
           onClick={openBO}
         >
           <h1 className="text-[min(4rem,13vw)]  whitespace-nowrap">
@@ -41,7 +41,7 @@ function ProjectsMobile() {
           {/* <img src="/BOFILM.gif"/> */}
         </div>
         <div
-          className="border-t-2 w-full my-1 border-b-2 flex  items-center justify-center border-black h-24"
+          className="border-t-2 cursor-pointer w-full my-1 border-b-2 flex  items-center justify-center border-black h-24"
           onClick={openNzx}
         >
           <h1 className="text-[min(4rem,13vw)]">NZX</h1>
