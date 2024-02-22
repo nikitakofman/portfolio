@@ -8,7 +8,7 @@ export const metadata = {
   description:
     "I'm Nikita Kofman, a Web Developer in France. Passionate about building digital solutions. Check out my portfolio and let's collaborate on your next project!",
   openGraph: {
-    title: "Villa Palmire - Elegant Guest House in La Turbie, France",
+    title: "Nikita Kofman - Web Developer based in France",
     description:
       "I'm Nikita Kofman, a Web Developer in France. Passionate about building digital solutions. Check out my portfolio and let's collaborate on your next project!",
     url: "https://www.nikitakofman.com",

@@ -27,16 +27,19 @@ export default function SlidingText() {
       } else if (xPercent > 0) {
         xPercent = -100;
       }
-      gsap.set(firstText.current, { xPercent: xPercent });
-      gsap.set(secondText.current, { xPercent: xPercent });
-      gsap.set(thirdText.current, { xPercent: xPercent });
+
+      // Use translate3d initially and smoothly transition to xPercent
+      gsap.to(firstText.current, { x: 0, xPercent: xPercent });
+      gsap.to(secondText.current, { x: 0, xPercent: xPercent });
+      gsap.to(thirdText.current, { x: 0, xPercent: xPercent });
+
       requestAnimationFrame(animate);
       xPercent += 0.03 * direction;
     };
 
     gsap.to(slider.current, {
       scrollTrigger: {
-        trigger: document.documentElement,
+        trigger: window,
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
@@ -47,9 +50,8 @@ export default function SlidingText() {
 
     requestAnimationFrame(animate);
 
-    // Cleanup GSAP animations on component unmount
     return () => {
-      gsap.to(slider.current, { x: 0 }); // Reset the position
+      gsap.to(slider.current, { x: 0 });
       gsap.killTweensOf([
         firstText.current,
         secondText.current,
