@@ -18,6 +18,7 @@
     "@material-tailwind/react": "^2.1.8",
     "@radix-ui/react-dialog": "^1.0.5",
     "@studio-freight/lenis": "^1.0.34",
+    "@vercel/analytics": "^1.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "emailjs-com": "^3.2.0",
