@@ -8,7 +8,7 @@ export default function Projects() {
     {
       title1: "Juventus",
       title2: "France",
-      src: "/JFFILM.MP4",
+      src: "/JFFILM.mp4",
       link: "https://www.juventus.fr",
     },
     {
