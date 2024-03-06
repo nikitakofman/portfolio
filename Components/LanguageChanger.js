@@ -54,7 +54,7 @@ export default function LanguageChanger() {
         // </button>
         <a
           href=""
-          class="text-[20px] hover:text-gray-600"
+          className="text-[20px] hover:text-gray-600"
           onClick={() => handleChange({ target: { value: locale } })}
         >
           {locale}

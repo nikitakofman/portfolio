@@ -6,6 +6,12 @@ import Project from "./SlideProjects";
 export default function Projects() {
   const projects = [
     {
+      title1: "Juventus",
+      title2: "France",
+      src: "/JFFILM.MP4",
+      link: "https://www.juventus.fr",
+    },
+    {
       title1: "Villa",
       title2: "Palmire",
       src: "/VPFILM.mp4",

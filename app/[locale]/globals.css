@@ -380,7 +380,7 @@ body {
   filter: invert(100%);
 }
 
-/* HTML: <div class="loader"></div> */
+/* HTML: <div className="loader"></div> */
 .loader {
   width: 45px;
   aspect-ratio: 1;
@@ -405,7 +405,7 @@ body {
     background-position: 0 calc(100% / 3), 0 0;
   }
 }
-/* HTML: <div class="loader"></div> */
+/* HTML: <div className="loader"></div> */
 /* .loader {
   width: 80px;
   height: 70px;

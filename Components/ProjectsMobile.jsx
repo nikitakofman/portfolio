@@ -14,6 +14,10 @@ function ProjectsMobile() {
     window.open("https://www.villadepalmire.com");
   };
 
+  const openJV = () => {
+    window.open("https://www.juventus.fr");
+  };
+
   const { t } = useTranslation();
   return (
     <>
@@ -23,6 +27,14 @@ function ProjectsMobile() {
         style={{ fontFamily: " ", fontWeight: "300" }}
       >
         <p>{t("mainworks")}</p>
+        <div
+          className="border-t-2 cursor-pointer w-full my-1 flex  items-center justify-center border-black h-24"
+          onClick={openJV}
+        >
+          <h1 className="text-[min(4rem,13vw)] whitespace-nowrap">
+            Juventus France
+          </h1>
+        </div>
         <div
           className="border-t-2 cursor-pointer w-full my-1 flex  items-center justify-center border-black h-24"
           onClick={openVP}
